@@ -22,7 +22,7 @@ function App() {
         setInformation(res.data.explanation)
       })
       .catch(err => {console.error(err)})
-  })
+  },[])
   return (
     
     <div className="App">
