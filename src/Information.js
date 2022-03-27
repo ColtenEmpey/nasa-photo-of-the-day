@@ -2,7 +2,7 @@ import React from 'react'
 
 const Information = (props) => {
   return (
-    <div>{props.information}</div>
+    <text>{props.information}</text>
   )
 }
 

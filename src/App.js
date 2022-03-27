@@ -4,7 +4,14 @@ import Photo from "./Photo"
 import Title from "./Title"
 import axios  from "axios";
 import Information from "./Information"
+import theme from "./theme"
 import "./App.css";
+import styled from "styled-components"
+
+const StyledTitle = styled.h1`
+ color: ${pr => pr.theme.primaryColor};
+
+`
 
 //fetching data from NASA API
 //https://api.nasa.gov/planetary/apod?api_key=P2zARKyxFJodh3SNBw2dVdWwVW6lxE4gaBZPLIV4
@@ -24,15 +31,16 @@ function App() {
       .catch(err => {console.error(err)})
   },[])
   return (
-    
-    <div className="App">
-      <Header/>
-      <div>
-        <Photo photoURL={photoURL}/>
-        <Title title={title}/>
-        <Information information={information}/>
+    <styledTitle>
+      <div className="App">
+        <Header/>
+        <div>
+          <Photo photoURL={photoURL}/>
+          <Title title={title}/>
+          <Information information={information}/>
+        </div>
       </div>
-    </div>
+    </styledTitle>
   );
 }
 
